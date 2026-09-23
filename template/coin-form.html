@@ -1,4 +1,4 @@
-<section class="form-section" id="aggiungi" aria-labelledby="coin-form-title">
+<dialog class="form-section" id="addDialog" aria-labelledby="coin-form-title">
   <div class="panel-header" style="padding: 0 0 18px; border: none; background: transparent;">
     <h3 id="coin-form-title">Nuova moneta</h3>
     <span class="tag">Catalogo</span>
@@ -14,7 +14,8 @@
             <option value="">Seleziona un tipo di moneta</option>
           </select>
           <button type="button" class="btn btn-secondary add-related" data-open-form="coin-type-form"
-            aria-controls="coin-type-form" aria-haspopup="dialog" title="Aggiungi tipo di moneta">+</button>
+            aria-controls="coin-type-form" aria-haspopup="dialog" title="Aggiungi tipo di moneta"
+            onclick="document.getElementById('coin-type-form').open=true;">+</button>
         </div>
       </div>
 
@@ -54,18 +55,17 @@
     </div>
 
     <div class="actions">
-      <button type="reset" class="btn btn-secondary">Annulla</button>
+      <button type="reset" class="btn btn-secondary" onclick="addDialog.open=false;">Annulla</button>
       <button type="submit" class="btn btn-primary">Salva moneta</button>
     </div>
   </form>
-</section>
+</dialog>
 
 <!-- Popup per la tabella coin_type. -->
-<dialog id="coin-type-form" class="related-form" data-entity="coin_type" aria-labelledby="coin-type-form-title">
+<dialog id="coin-type-form" class="related-form form-section" data-entity="coin_type" aria-labelledby="coin-type-form-title">
   <form method="dialog" data-related-form="coin_type">
     <div class="panel-header">
       <h3 id="coin-type-form-title">Nuovo tipo di moneta</h3>
-      <button type="submit" class="btn btn-secondary" aria-label="Chiudi">Chiudi</button>
     </div>
 
     <div class="form-grid">
@@ -86,7 +86,8 @@
             <option value="">Seleziona una valuta</option>
           </select>
           <button type="button" class="btn btn-secondary add-related" data-open-form="currency-form"
-            aria-controls="currency-form" aria-haspopup="dialog" title="Aggiungi valuta">+</button>
+            aria-controls="currency-form" aria-haspopup="dialog" title="Aggiungi valuta"
+            onclick="document.getElementById('currency-form').open=true;">+</button>
         </div>
       </div>
 
@@ -112,7 +113,8 @@
             <option value="">Seleziona un tipo</option>
           </select>
           <button type="button" class="btn btn-secondary add-related" data-open-form="type-form"
-            aria-controls="type-form" aria-haspopup="dialog" title="Aggiungi tipo">+</button>
+            aria-controls="type-form" aria-haspopup="dialog" title="Aggiungi tipo"
+            onclick="document.getElementById('type-form').open=true;">+</button>
         </div>
       </div>
 
@@ -148,14 +150,14 @@
     </div>
 
     <div class="actions">
-      <button type="reset" class="btn btn-secondary">Annulla</button>
+      <button type="reset" class="btn btn-secondary" onclick="document.getElementById('coin-type-form').open=false;">Annulla</button>
       <button type="submit" class="btn btn-primary" value="save">Salva tipo</button>
     </div>
   </form>
 </dialog>
 
 <!-- Popup per la tabella currency. -->
-<dialog id="currency-form" class="related-form" data-entity="currency" aria-labelledby="currency-form-title">
+<dialog id="currency-form" class="related-form form-section" data-entity="currency" aria-labelledby="currency-form-title">
   <form method="dialog" data-related-form="currency">
     <div class="panel-header">
       <h3 id="currency-form-title">Nuova valuta</h3>
@@ -172,7 +174,7 @@
 </dialog>
 
 <!-- Popup per la tabella type. -->
-<dialog id="type-form" class="related-form" data-entity="type" aria-labelledby="type-form-title">
+<dialog id="type-form" class="related-form form-section" data-entity="type" aria-labelledby="type-form-title">
   <form method="dialog" data-related-form="type">
     <div class="panel-header">
       <h3 id="type-form-title">Nuovo tipo</h3>

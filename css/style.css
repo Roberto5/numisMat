@@ -452,6 +452,7 @@ a {
     box-shadow: 0 10px 26px rgba(22, 55, 44, 0.05);
     padding: 24px;
     position: absolute;
+    z-index: 100;
 }
 
 .form-grid {

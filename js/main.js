@@ -12,6 +12,9 @@ let coinsData=[];
  * @var {HTMLElement} catalogEl
  */
 let catalogEl;
+
+let formEl;
+let addDialog;
 //load templates when the DOM is ready.
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -71,7 +74,9 @@ function init(templates) {
     }
 
     renderCoinCards();
-
+    document.getElementById('forms').innerHTML= templates.form;
+    formEl=document.getElementById('coin-form');
+    addDialog=document.getElementById('addDialog');
 }
 
 /**
@@ -130,6 +135,6 @@ function renderCoinCards() {
     }
 }
 function addCoinForm() {
-    catalogEl.innerHTML="";
-    catalogEl.innerHTML=templates.form;
+    //@todo add populate select
+    addDialog.open=true;
 }
