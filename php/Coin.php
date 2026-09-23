@@ -21,7 +21,7 @@ final class Coin
      * @var array<string, array{select: list<string>, aliases: list<string>, type: string}>
      */
     private const ARRAY_FIELDS = [
-        'id' => ['select' => ['c.id AS id'], 'aliases' => ['id'], 'type' => 'int'],
+        'id' => ['select' => ['c.id AS id'], 'aliases' => ['id'], 'type' => 'int', 'readonly' => true],
         'typeId' => ['select' => ['c.typeID AS typeId'], 'aliases' => ['typeId'], 'type' => 'int'],
         'number' => ['select' => ['c.number AS number'], 'aliases' => ['number'], 'type' => 'int'],
         'year' => ['select' => ['c.year AS year'], 'aliases' => ['year'], 'type' => 'int'],
@@ -49,8 +49,8 @@ final class Coin
         'issuer' => ['select' => ['ct.issuer AS issuer'], 'aliases' => ['issuer'], 'type' => 'string'],
     ];
     private array $property = [];
-    
-    
+
+
 
     public function __construct(array $data)
     {
@@ -123,8 +123,14 @@ final class Coin
     public function __set(string $key, mixed $value): void
     {
         // c'è modo di discriminare se il set è publico o privato?
+        
+
         $type = self::ARRAY_FIELDS[$key]['type'];
         if (array_key_exists($key, self::ARRAY_FIELDS)) {
+            // chiavi in sola lettura
+            if (self::ARRAY_FIELDS[$key]['readonly'] === true) {
+                throw new InvalidArgumentException(sprintf('Cannot set readonly property %s', $key));
+            }
             if ((($type === 'images') || ($type === 'descriptions')) && !is_array($value)) {
                 throw new InvalidArgumentException(sprintf('Invalid data type for %s field. Expected array', $type));
             }
@@ -145,7 +151,7 @@ final class Coin
     }
     public function __isset(string $key): bool
     {
-        return array_key_exists($key, self::ARRAY_FIELDS);
+        return array_key_exists($key, self::ARRAY_FIELDS)&& array_key_exists($key,$this->property);
     }
     public function setGrade(string $grade): void
     {

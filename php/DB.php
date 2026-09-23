@@ -148,7 +148,7 @@ final class DB
         return $environmentValue === false ? $default : $environmentValue;
     }
     /**
-     * cerca una mona con id specificato
+     * cerca una moneta nel database con id specificato
      * @param int $id
      * @throws InvalidArgumentException
      * @return Coin
