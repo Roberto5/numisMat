@@ -129,3 +129,7 @@ function renderCoinCards() {
         catalogEl.innerHTML = '<p>Nessuna moneta trovata</p>';
     }
 }
+function addCoinForm() {
+    catalogEl.innerHTML="";
+    catalogEl.innerHTML=templates.form;
+}

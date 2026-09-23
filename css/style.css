@@ -157,9 +157,9 @@ a {
 }
 
 .btn-secondary {
-    background: transparent;
+    background: var(--secondary);
     color: white;
-    border-color: rgba(255, 255, 255, 0.35);
+    border-color: var(--secondary-2);
 }
 
 .hero-card {
@@ -446,11 +446,12 @@ a {
 
 .form-section {
     margin-top: 30px;
-    background: rgba(255, 255, 255, 0.75);
+    background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 22px;
     box-shadow: 0 10px 26px rgba(22, 55, 44, 0.05);
     padding: 24px;
+    position: absolute;
 }
 
 .form-grid {

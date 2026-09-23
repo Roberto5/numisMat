@@ -1,1 +1,189 @@
-<div>schemo chi legge</div>
+<section class="form-section" id="aggiungi" aria-labelledby="coin-form-title">
+  <div class="panel-header" style="padding: 0 0 18px; border: none; background: transparent;">
+    <h3 id="coin-form-title">Nuova moneta</h3>
+    <span class="tag">Catalogo</span>
+  </div>
+
+  <!-- Il form salva i campi della tabella coin. Le opzioni saranno caricate dal database. -->
+  <form id="coin-form" data-entity="coin">
+    <div class="form-grid">
+      <div class="field" style="grid-column: 1 / -1;">
+        <label for="coin-type-id">Tipo di moneta</label>
+        <div class="input-with-action">
+          <select id="coin-type-id" name="typeID" required data-source="coin_type">
+            <option value="">Seleziona un tipo di moneta</option>
+          </select>
+          <button type="button" class="btn btn-secondary add-related" data-open-form="coin-type-form"
+            aria-controls="coin-type-form" aria-haspopup="dialog" title="Aggiungi tipo di moneta">+</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="coin-number">Numero</label>
+        <input id="coin-number" name="number" type="number" min="0" required>
+      </div>
+
+      <div class="field">
+        <label for="coin-year">Anno</label>
+        <input id="coin-year" name="year" type="number" min="0" max="9999">
+      </div>
+
+      <div class="field">
+        <label for="coin-grade">Grado di conservazione</label>
+        <select id="coin-grade" name="grade" required>
+          <option value="">Seleziona il grado</option>
+          <option value="g">G</option>
+          <option value="vg">VG</option>
+          <option value="f">F</option>
+          <option value="vf">VF</option>
+          <option value="xf">XF</option>
+          <option value="au">AU</option>
+          <option value="unc">UNC</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="coin-value">Valore nominale</label>
+        <input id="coin-value" name="value" type="number" min="0" required>
+      </div>
+
+      <div class="field" style="grid-column: 1 / -1;">
+        <label for="coin-position">Posizione</label>
+        <textarea id="coin-position" name="position" rows="2" required></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="reset" class="btn btn-secondary">Annulla</button>
+      <button type="submit" class="btn btn-primary">Salva moneta</button>
+    </div>
+  </form>
+</section>
+
+<!-- Popup per la tabella coin_type. -->
+<dialog id="coin-type-form" class="related-form" data-entity="coin_type" aria-labelledby="coin-type-form-title">
+  <form method="dialog" data-related-form="coin_type">
+    <div class="panel-header">
+      <h3 id="coin-type-form-title">Nuovo tipo di moneta</h3>
+      <button type="submit" class="btn btn-secondary" aria-label="Chiudi">Chiudi</button>
+    </div>
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="coin-type-name">Nome</label>
+        <input id="coin-type-name" name="name" type="text" maxlength="50" required>
+      </div>
+
+      <div class="field">
+        <label for="coin-type-numista-id">ID Numista</label>
+        <input id="coin-type-numista-id" name="numista_id" type="number" min="0" >
+      </div>
+
+      <div class="field">
+        <label for="coin-type-value-id">Valuta</label>
+        <div class="input-with-action">
+          <select id="coin-type-value-id" name="value_id" required data-source="currency">
+            <option value="">Seleziona una valuta</option>
+          </select>
+          <button type="button" class="btn btn-secondary add-related" data-open-form="currency-form"
+            aria-controls="currency-form" aria-haspopup="dialog" title="Aggiungi valuta">+</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="coin-type-numeric-value">Valore numerico</label>
+        <input id="coin-type-numeric-value" name="numeric_value" type="number" min="0" required>
+      </div>
+
+      <div class="field">
+        <label for="coin-type-min-year">Anno minimo</label>
+        <input id="coin-type-min-year" name="min_year" type="number" min="0" max="9999" >
+      </div>
+
+      <div class="field">
+        <label for="coin-type-max-year">Anno massimo</label>
+        <input id="coin-type-max-year" name="max_year" type="number" min="0" max="9999" >
+      </div>
+
+      <div class="field">
+        <label for="coin-type-type-id">Tipo</label>
+        <div class="input-with-action">
+          <select id="coin-type-type-id" name="type_id" required data-source="type">
+            <option value="">Seleziona un tipo</option>
+          </select>
+          <button type="button" class="btn btn-secondary add-related" data-open-form="type-form"
+            aria-controls="type-form" aria-haspopup="dialog" title="Aggiungi tipo">+</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="coin-type-issuer">Emittente</label>
+        <input id="coin-type-issuer" name="issuer" type="text" maxlength="100" >
+      </div>
+
+      <div class="field">
+        <label for="coin-type-img-obverse">Immagine dritto</label>
+        <input id="coin-type-img-obverse" name="img_obverse" type="text" >
+      </div>
+
+      <div class="field">
+        <label for="coin-type-img-reverse">ID immagine rovescio</label>
+        <input id="coin-type-img-reverse" name="img_reverse" type="number" min="0" >
+      </div>
+
+      <div class="field">
+        <label for="coin-type-desc-obverse">Descrizione dritto</label>
+        <textarea id="coin-type-desc-obverse" name="desc_obverse" ></textarea>
+      </div>
+
+      <div class="field">
+        <label for="coin-type-desc-reverse">Descrizione rovescio</label>
+        <textarea id="coin-type-desc-reverse" name="desc_reverse" ></textarea>
+      </div>
+
+      <div class="field" style="grid-column: 1 / -1;">
+        <label for="coin-type-comments">Commenti</label>
+        <textarea id="coin-type-comments" name="comments" ></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="reset" class="btn btn-secondary">Annulla</button>
+      <button type="submit" class="btn btn-primary" value="save">Salva tipo</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Popup per la tabella currency. -->
+<dialog id="currency-form" class="related-form" data-entity="currency" aria-labelledby="currency-form-title">
+  <form method="dialog" data-related-form="currency">
+    <div class="panel-header">
+      <h3 id="currency-form-title">Nuova valuta</h3>
+    </div>
+    <div class="field">
+      <label for="currency-name">Nome</label>
+      <input id="currency-name" name="name" type="text" maxlength="100" required>
+    </div>
+    <div class="actions">
+      <button type="reset" class="btn btn-secondary" onclick="document.getElementById('currency-form').open=false;">Annulla</button>
+      <button type="submit" class="btn btn-primary" value="save">Salva valuta</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Popup per la tabella type. -->
+<dialog id="type-form" class="related-form" data-entity="type" aria-labelledby="type-form-title">
+  <form method="dialog" data-related-form="type">
+    <div class="panel-header">
+      <h3 id="type-form-title">Nuovo tipo</h3>
+    </div>
+    <div class="field">
+      <label for="type-name">Nome</label>
+      <input id="type-name" name="name" type="number" required>
+    </div>
+    <div class="actions">
+      <button type="reset" class="btn btn-secondary" onclick="document.getElementById('type-form').open=false;">Annulla</button>
+      <button type="submit" class="btn btn-primary" value="save">Salva tipo</button>
+    </div>
+  </form>
+</dialog>
