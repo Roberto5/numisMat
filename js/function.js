@@ -27,7 +27,7 @@ function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 /**
- * 
+ * genera un elemento img 
  * @param {string} src 
  * @param {string} alt 
  * @param {Record<string, string>} params
@@ -38,15 +38,22 @@ function getImage(src, alt, params = {}) {
     img.src = src;
     img.alt = alt;
     img.title = alt;
-    img.setAttribute('onerror', 'this.remove();');
+    //img.setAttribute('onerror', 'this.remove();');
+    
+    img.setAttribute('onerror', "this.setAttribute('src','img/default_coin.png');");
+    //img.onerror
     for (const [key, value] of Object.entries(params)) {
         img.setAttribute(key, value);
     }
-
     return img.outerHTML;
 }
+/**
+ * genera un elemento img per le monete
+ * @param {int} id 
+ * @returns 
+ */
 function getCoinImage(id) {
     if (parseInt(id) < 0) return null;
     let coin =coins.find(v=>v.id==id);
-    return getImage(`CoinImg/${coin.defaultImg}-${id}.png`,coin.name,{height:'140px'});
+    return getImage(`CoinImg/${coin.defaultImg}-${id}.png`,coin.name,{height:'140px',with:'140px'});
 }
