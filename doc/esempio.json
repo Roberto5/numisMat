@@ -1,0 +1,1004 @@
+{
+    "id": 95420,
+    "url": "https:\/\/en.numista.com\/95420",
+    "title": "1 Conventionsthaler",
+    "object_type": {
+        "id": 1,
+        "name": "Standard circulation coins"
+    },
+    "issuer": {
+        "code": "muhlhausen_free_imperial_city",
+        "name": "M\u00fchlhausen, Free imperial city of"
+    },
+    "min_year": 1767,
+    "max_year": 1767,
+    "ruler": [
+        {
+            "id": 6176,
+            "name": "Free city",
+            "wikidata_id": "Q14925"
+        },
+        {
+            "id": 8536,
+            "name": "Joseph II",
+            "wikidata_id": "Q76555",
+            "group": {
+                "id": 867,
+                "name": "Emperors of the Holy Roman Empire"
+            }
+        }
+    ],
+    "value": {
+        "text": "1 Thaler",
+        "numeric_value": 1,
+        "currency": {
+            "id": 6357,
+            "name": "Thaler",
+            "full_name": "Thaler"
+        }
+    },
+    "demonetization": {
+        "is_demonetized": true
+    },
+    "size": 40,
+    "shape": "Round",
+    "composition": {
+        "text": "Silver"
+    },
+    "technique": {
+        "text": "Milled"
+    },
+    "obverse": {
+        "description": "Helmeted arms, legend surrounding.",
+        "lettering": "X. EINE FEINE MARCK.\r\nCIVIT.IMPERIALIS MULHUSIN\u00c6.1767",
+        "lettering_scripts": [
+            {
+                "name": "Latin"
+            }
+        ],
+        "picture": "https:\/\/en.numista.com\/catalogue\/photos\/muhlhausen_free_imperial_city\/63ee272fcae564.11703305-original.jpg",
+        "thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/muhlhausen_free_imperial_city\/63ee272fcae564.11703305-180.jpg",
+        "picture_copyright": "Heritage Auctions",
+        "picture_copyright_url": "http:\/\/www.ha.com"
+    },
+    "reverse": {
+        "description": "Laureate and armored bust facing right.",
+        "lettering": "COR.&HER.R.H.B.&C. IOSEPH.II.D.G.R.I.S.A.",
+        "lettering_scripts": [
+            {
+                "name": "Latin"
+            }
+        ],
+        "picture": "https:\/\/en.numista.com\/catalogue\/photos\/muhlhausen_free_imperial_city\/63ee27316db429.97721947-original.jpg",
+        "thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/muhlhausen_free_imperial_city\/63ee27316db429.97721947-180.jpg",
+        "picture_copyright": "Heritage Auctions",
+        "picture_copyright_url": "http:\/\/www.ha.com"
+    },
+    "references": [
+        {
+            "catalogue": {
+                "id": 3,
+                "code": "KM"
+            },
+            "number": "75"
+        },
+        {
+            "catalogue": {
+                "id": 828,
+                "code": "Dav GT II"
+            },
+            "number": "2462"
+        }
+    ],
+    "mints": [
+        {
+            "id": 230,
+            "name": "Clausthal"
+        }
+    ],
+    "category": "coin",
+    "type": "Standard circulation coins"
+}
+
+{
+    "count": 81,
+    "types": [
+        {
+            "id": 345026,
+            "title": "1 Diner (Pope Pius X)",
+            "object_type": {
+                "id": 47,
+                "name": "Collector coins"
+            },
+            "issuer": {
+                "code": "andorre",
+                "name": "Andorra"
+            },
+            "min_year": 2012,
+            "max_year": 2012,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/andorre\/6360c1095a2eb1.07631351-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/andorre\/6360c2eea11e71.70176674-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 426263,
+            "title": "10 Francs (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "burundi",
+                "name": "Burundi"
+            },
+            "min_year": 2024,
+            "max_year": 2024,
+            "category": "coin"
+        },
+        {
+            "id": 465870,
+            "title": "Solidus - Theophilos (Cross reverse)",
+            "object_type": {
+                "id": 1,
+                "name": "Standard circulation coins"
+            },
+            "issuer": {
+                "code": "byzance",
+                "name": "Byzantine Empire"
+            },
+            "min_year": 829,
+            "max_year": 830,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/byzance\/680860faee0794.47940532-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/byzance\/680860fb3db538.78442041-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 145114,
+            "title": "500 Francs (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "cameroun",
+                "name": "Cameroon (1960-date)"
+            },
+            "min_year": 2017,
+            "max_year": 2017,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/cameroun\/60f0a8831579f4.63296908-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/cameroun\/60f0a882c5e768.14316697-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 302800,
+            "title": "3000 Francs CFA (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "tchad",
+                "name": "Chad"
+            },
+            "min_year": 2017,
+            "max_year": 2017,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/tchad\/612d15b1184113.01115414-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/tchad\/612d15b0ce6490.65321986-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 8695,
+            "title": "100 Francs (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/1401-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/1400-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 325569,
+            "title": "100 Francs (Trial)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/65183aac7d04a6.97485800-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/65183aab8148c6.31854461-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 450661,
+            "title": "100 francs Marie-Curie (Belle \u00c9preuve)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/69441fa8d95164.72474058-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/69441fa965d244.66357793-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 27,
+            "title": "100 Francs (Marie Curie)",
+            "object_type": {
+                "id": 2,
+                "name": "Circulating commemorative coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5f5a96f10161c2.62100330-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5f5a96f1edfd65.22140811-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 195619,
+            "title": "100 Francs (Marie Curie, piedfort argent)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e400361b5add9.44779967-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e40036270df05.38404371-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 195621,
+            "title": "100 Francs (Marie Curie, piedfort platine)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e400875096667.36977966-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e400875624c03.33862597-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 195620,
+            "title": "100 Francs (Marie Curie, piedfort or)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e400615701247.17450489-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e400616049949.53168410-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 450662,
+            "title": "100 francs Marie-Curie (\u00c9preuve de contr\u00f4le)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "category": "coin"
+        },
+        {
+            "id": 452010,
+            "title": "100 francs Andr\u00e9 Malraux",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1997,
+            "max_year": 1997,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/69441b1aeea980.10118148-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/69441b1baeea53.55607685-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 452017,
+            "title": "100 francs Andr\u00e9 Malraux (Belle \u00c9preuve)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1997,
+            "max_year": 1997,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/67928a3d3362f3.67472150-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/67928a3da2ad55.80138785-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 40,
+            "title": "100 Francs (Andr\u00e9 Malraux)",
+            "object_type": {
+                "id": 2,
+                "name": "Circulating commemorative coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1997,
+            "max_year": 1997,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6858dbf19159e8.49531458-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6858dbf448e214.26780856-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 8171,
+            "title": "100 Francs (Pierre and Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1997,
+            "max_year": 1997,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/64611dfa85c933.17291904-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/64611dfae72bd3.44341017-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 174318,
+            "title": "100 Franc (Panth\u00e9on)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1997,
+            "max_year": 2000,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/11962-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/11963-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 335086,
+            "title": "500 Francs (Pierre and Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1997,
+            "max_year": 1997,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/62e4ee4ac9a431.46799954-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/62e4ee4af06678.68831633-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 217038,
+            "title": "500 \u00c9chantillon type RAVEL (Francs)",
+            "object_type": {
+                "id": 94,
+                "name": "ATM test notes"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1992,
+            "max_year": 2001,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6064fcbf32df23.11452446-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6064fcbfbcfe00.04968817-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 203759,
+            "title": "500 Francs - Pierre & Marie Curie (type 1993)",
+            "object_type": {
+                "id": 79,
+                "name": "Standard circulation banknotes"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1994,
+            "max_year": 2000,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e99b3972ac112.07882635-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/5e99b3979ea235.69222178-180.jpg",
+            "category": "banknote"
+        },
+        {
+            "id": 437135,
+            "title": "500 francs - Usher",
+            "object_type": {
+                "id": 87,
+                "name": "Fantasy banknotes"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2023,
+            "max_year": 2023,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6724e15f67b052.48972865-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6724e160118b18.86699745-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 97,
+            "title": "1 Euro Cent",
+            "object_type": {
+                "id": 1,
+                "name": "Standard circulation coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1999,
+            "max_year": 2026,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/3926-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/3928-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 393688,
+            "title": "50 Euro Cents (Marie Curie)",
+            "object_type": {
+                "id": 1,
+                "name": "Standard circulation coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2024,
+            "max_year": 2026,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6a4513d1478803.99965510-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6a4513d3ba6df6.05581286-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 9288,
+            "title": "10 Euros (Curie Institute)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2009,
+            "max_year": 2009,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/2516-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/2517-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 349969,
+            "title": "10 Euros (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2019,
+            "max_year": 2019,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/63d2d9576a4199.38854153-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/63d2d9595dd058.89511592-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 280008,
+            "title": "20 Euros (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2006,
+            "max_year": 2006,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/60e07def0f1225.24785483-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/60e07def4f3df7.05172415-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 359824,
+            "title": "20 Euros (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2006,
+            "max_year": 2006,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/641c6fd662d118.63421758-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/641c6fd70ede84.60362603-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 9289,
+            "title": "20 Euros (Curie Institute)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2009,
+            "max_year": 2009,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/60e0cf7a68de72.55127681-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/60e0cf7a98fcf1.22424321-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 188026,
+            "title": "50 Euros (Institut Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2009,
+            "max_year": 2009,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/12345-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/12346-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 83530,
+            "title": "50 Euros (Institut Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2009,
+            "max_year": 2009,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/9517-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/9518-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 187848,
+            "title": "50 Euros (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2019,
+            "max_year": 2019,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/12251-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/12250-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 187665,
+            "title": "200 Euros (Marie Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2019,
+            "max_year": 2019,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/12209-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/12208-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 171495,
+            "title": "500 Euros (Institut Curie)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2009,
+            "max_year": 2009,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/11847-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/11848-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 354874,
+            "title": "0 Euro - Marie Curie",
+            "object_type": {
+                "id": 200,
+                "name": "Zero-euro banknotes"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2023,
+            "max_year": 2023,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/63db6c9c3bfa68.18898622-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/63db6c9d06f7c7.86128950-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 448701,
+            "title": "100 francs - Marie Curie",
+            "object_type": {
+                "id": 54,
+                "name": "Contemporary counterfeits"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1984,
+            "max_year": 1984,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/677d6f1b1549d9.83027638-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/677d6f1ad11546.57932220-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 408192,
+            "title": "FRANCE NATATION",
+            "object_type": {
+                "id": 69,
+                "name": "Inauguration medals"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 1969,
+            "max_year": 1969,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6613b24c82dac5.54367172-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6613b24e067d04.79097454-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 111596,
+            "title": "Monnaie de Paris Tourist Token - Le Panth\u00e9on",
+            "object_type": {
+                "id": 31,
+                "name": "Souvenir medallions"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2008,
+            "max_year": 2009,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/606334c43de914.89853182-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/606334c4c759a6.92376088-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 313621,
+            "title": "Jeton touristique - Monnaie de Paris - Paris - Le Panth\u00e9on",
+            "object_type": {
+                "id": 31,
+                "name": "Souvenir medallions"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "min_year": 2010,
+            "max_year": 2010,
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/61b5dfa1d9e5d0.65937802-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 68630,
+            "title": "Medal - Collection Panth\u00e9on (Pierre et Marie Curie)",
+            "object_type": {
+                "id": 219,
+                "name": "Collection medallions"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6062d7955f9e61.89574104-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/6062d795ea42e8.41281855-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 46756,
+            "title": "Token - Soci\u00e9t\u00e9 Fran\u00e7aise des Monnaies (Marie Curie)",
+            "object_type": {
+                "id": 219,
+                "name": "Collection medallions"
+            },
+            "issuer": {
+                "code": "france",
+                "name": "France"
+            },
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/60628666c981e4.98969143-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/france\/60628668053043.13817192-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 9157,
+            "title": "3 Pfennigs",
+            "object_type": {
+                "id": 1,
+                "name": "Standard circulation coins"
+            },
+            "issuer": {
+                "code": "cathedral_chapter_munster",
+                "name": "M\u00fcnster, Cathedral chapter of"
+            },
+            "min_year": 1739,
+            "max_year": 1760,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/cathedral_chapter_munster\/67be39a2bc13a1.91255814-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/cathedral_chapter_munster\/67be39a341a370.52614784-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 329665,
+            "title": "10 Dollars (Goodbye French Currency)",
+            "object_type": {
+                "id": 3,
+                "name": "Non-circulating coins"
+            },
+            "issuer": {
+                "code": "liberia",
+                "name": "Liberia"
+            },
+            "min_year": 2002,
+            "max_year": 2002,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/liberia\/6299aa85f31558.05892722-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/liberia\/6299aa86340944.49149161-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 132771,
+            "title": "Medal - Millennium Collection - Marie Curie",
+            "object_type": {
+                "id": 135,
+                "name": "Commemorative medals"
+            },
+            "issuer": {
+                "code": "nouvelle-zelande",
+                "name": "New Zealand"
+            },
+            "min_year": 1999,
+            "max_year": 1999,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/nouvelle-zelande\/6135b7e377cca8.24164232-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/nouvelle-zelande\/61357f34c56094.36987943-180.jpg",
+            "category": "exonumia"
+        },
+        {
+            "id": 437993,
+            "title": "1 Dollar - Charles III (Marie Curie)",
+            "object_type": {
+                "id": 47,
+                "name": "Collector coins"
+            },
+            "issuer": {
+                "code": "niue",
+                "name": "Niue"
+            },
+            "min_year": 2024,
+            "max_year": 2024,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/67111072065bf7.73357274-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/67111072860967.17914841-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 328408,
+            "title": "2 Dollars - Elizabeth II (Marie Curie)",
+            "object_type": {
+                "id": 47,
+                "name": "Collector coins"
+            },
+            "issuer": {
+                "code": "niue",
+                "name": "Niue"
+            },
+            "min_year": 2022,
+            "max_year": 2022,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/62862ca1b94053.24125082-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/62862ca220f8e1.87100278-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 355684,
+            "title": "2 Dollars - Charles III (Marie Curie)",
+            "object_type": {
+                "id": 47,
+                "name": "Collector coins"
+            },
+            "issuer": {
+                "code": "niue",
+                "name": "Niue"
+            },
+            "min_year": 2023,
+            "max_year": 2023,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/63e620461e99e2.82333272-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/63e6204682eb60.33262608-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 355683,
+            "title": "250 Dollars - Charles III (Marie Curie)",
+            "object_type": {
+                "id": 47,
+                "name": "Collector coins"
+            },
+            "issuer": {
+                "code": "niue",
+                "name": "Niue"
+            },
+            "min_year": 2023,
+            "max_year": 2023,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/63e61fe332fa72.11146892-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/niue\/63e61fe3b8eac6.21984004-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 155822,
+            "title": "10 Zlotys (Maria Sklodowska-Curie; Trial Strike)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "pologne",
+                "name": "Poland"
+            },
+            "min_year": 1967,
+            "max_year": 1967,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/pologne\/60bbad2cb429c0.61809894-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/pologne\/60bbad2cdc9df3.41211298-180.jpg",
+            "category": "coin"
+        },
+        {
+            "id": 124064,
+            "title": "10 Zlotys (Maria Sklodowska-Curie; Trial Strike)",
+            "object_type": {
+                "id": 6,
+                "name": "Patterns"
+            },
+            "issuer": {
+                "code": "pologne",
+                "name": "Poland"
+            },
+            "min_year": 1967,
+            "max_year": 1967,
+            "obverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/pologne\/7552-180.jpg",
+            "reverse_thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/pologne\/7553-180.jpg",
+            "category": "coin"
+        }
+    ]
+}
+{
+    "id": 344205,
+    "url": "https:\/\/en.numista.com\/344205",
+    "title": "Token - Dedem - Kiddie Rides",
+    "object_type": {
+        "id": 49,
+        "name": "Ride tokens"
+    },
+    "issuer": {
+        "code": "italie",
+        "name": "Italy"
+    },
+    "size": 17.6,
+    "thickness": 2,
+    "shape": "Round",
+    "composition": {
+        "text": "Bronze"
+    },
+    "technique": {
+        "text": "Milled"
+    },
+    "obverse": {
+        "description": "Fictional character",
+        "lettering": "KIDDIE RIDES",
+        "lettering_scripts": [
+            {
+                "name": "Latin"
+            }
+        ],
+        "picture": "https:\/\/en.numista.com\/catalogue\/photos\/italie\/6a3b4f2066aa02.65673769-original.jpg",
+        "thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/italie\/6a3b4f2066aa02.65673769-180.jpg",
+        "picture_copyright": "Zwilly",
+        "picture_license_name": "CC BY",
+        "picture_license_url": "https:\/\/creativecommons.org\/licenses\/by\/4.0\/deed.en"
+    },
+    "reverse": {
+        "description": "Carousel horse",
+        "picture": "https:\/\/en.numista.com\/catalogue\/photos\/italie\/6a3b4f2101a9a7.27877018-original.jpg",
+        "thumbnail": "https:\/\/en.numista.com\/catalogue\/photos\/italie\/6a3b4f2101a9a7.27877018-180.jpg",
+        "picture_copyright": "Zwilly",
+        "picture_license_name": "CC BY",
+        "picture_license_url": "https:\/\/creativecommons.org\/licenses\/by\/4.0\/deed.en"
+    },
+    "comments": "Token used for children rides manufactured by Cogan, Italy since end 70s",
+    "tags": [
+        "Horse or equine",
+        "Reptile"
+    ],
+    "weight": 3.5,
+    "orientation": "medal",
+    "edge": {
+        "description": "Plain."
+    },
+    "category": "exonumia",
+    "type": "Ride tokens"
+}

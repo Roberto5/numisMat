@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favicon.png" sizes="64x64">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+  <title>numisMat — Matti per la numismatica</title>
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <h1>numisMat</h1>
+      </div>
+<!--a cosa serve? @todo: rimuovere se non serve? -->
+      <nav class="nav" aria-label="Navigazione principale">
+        <a href="#catalogo">Catalogo</a>
+        <a href="#aggiungi">Aggiungi moneta</a>
+        <a href="#admin">Admin</a>
+        <a class="btn btn-primary" href="#aggiungi">Nuova scheda</a>
+      </nav>
+    </header>
+    <section class="stats" aria-label="Statistiche principali">
+      <div class="stat">
+        <strong>1,284</strong>
+        <span>Monete</span>
+      </div>
+      <div class="stat">
+        <strong>68</strong>
+        <span>Paesi</span>
+      </div>
+      <div class="stat">
+        <strong>94%</strong>
+        <span>Catalogate</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+                <div class="tabs">
+          <nav class="nav">
+            <div class="tab active" >Tutte</div>
+            <div class="tab" >Euro</div>
+            <div class="tab" >Lire</div>
+          </nav>
+        </div>
+
+        
+
+        <div class="catalog">
+          
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="panel search-box">
+          <div class="panel-header" style="padding: 0 0 12px; border: none; background: transparent;">
+            <h3>Ricerca</h3>
+          </div>
+          <input type="text" placeholder="Cerca per anno, paese o nome..." />
+          <select aria-label="Tipo di ricerca" style="margin-top: 12px;">
+            <option>Ordine cronologico</option>
+            <option>Valore crescente</option>
+            <option>Valore decrescente</option>
+          </select>
+        </div>
+
+        <div class="panel filters">
+          <div class="panel-header" style="padding: 0 0 12px; border: none; background: transparent;">
+            <h3>Filtri</h3>
+          </div>
+          <div class="filters-list">
+            <span class="chip">Italia</span>
+            <span class="chip">Europa</span>
+            <span class="chip">XVIII sec.</span>
+            <span class="chip">Argento</span>
+            <span class="chip">Bronzo</span>
+            <span class="chip">UNC</span>
+          </div>
+        </div>
+
+        <div class="panel summary-box">
+          <h4>Riepilogo collezione</h4>
+          <ul class="summary-list">
+            <li><span>Valore totale</span><strong>€ 8.420</strong></li>
+            <li><span>Monete rare</span><strong>42</strong></li>
+            <li><span>Da rivedere</span><strong>17</strong></li>
+            <li><span>Ultimo accesso</span><strong>3 giorni</strong></li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="form-section" id="aggiungi" style="display: none;">
+      <div class="panel-header" style="padding: 0 0 18px; border: none; background: transparent;">
+        <h3>Nuova moneta</h3>
+        <span class="tag">Admin</span>
+      </div>
+
+      <form>
+        <div class="form-grid">
+          <div class="field">
+            <label for="nome">Nome / titolo</label>
+            <input id="nome" type="text" value="Lira Italiana 1950" />
+          </div>
+
+          <div class="field">
+            <label for="paese">Paese</label>
+            <input id="paese" type="text" value="Italia" />
+          </div>
+
+          <div class="field">
+            <label for="anno">Anno</label>
+            <input id="anno" type="text" value="1950" />
+          </div>
+
+          <div class="field">
+            <label for="valore">Valore nominale</label>
+            <input id="valore" type="text" value="50 Lire" />
+          </div>
+
+          <div class="field">
+            <label for="materiale">Materiale</label>
+            <select id="materiale">
+              <option selected>Argento</option>
+              <option>Bronzo</option>
+              <option>Rame</option>
+              <option>Nichel</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="stato">Condizione</label>
+            <select id="stato">
+              <option>G</option>
+              <option selected>VF</option>
+              <option>XF</option>
+              <option>UNC</option>
+            </select>
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="note">Note</label>
+            <textarea id="note">Moneta dell'epoca postbellica, con lieve segno di circolazione. Decoro ben leggibile e dettaglio del motivo centrale molto definito.</textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-secondary" style="color: var(--primary); border-color: rgba(22,55,44,0.12); background: rgba(22,55,44,0.03);">Annulla</button>
+          <button type="submit" class="btn btn-primary">Salva moneta</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>
