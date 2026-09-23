@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="img/favicon.png" sizes="64x64">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js"></script>
+  <script src="js/function.js"></script>
+  <script src="js/main.js" defer></script>
   <title>numisMat — Matti per la numismatica</title>
 </head>
 <body>
@@ -43,6 +44,7 @@
                 <div class="tabs">
           <nav class="nav">
             <div class="tab active" >Tutte</div>
+            <!-- todo da generare dinamicamente-->
             <div class="tab" >Euro</div>
             <div class="tab" >Lire</div>
           </nav>
@@ -50,7 +52,7 @@
 
         
 
-        <div class="catalog">
+        <div id="catalog" class="catalog">
           
         </div>
       </div>

@@ -289,7 +289,6 @@ a {
 
 .coin-card {
     width: 200px;
-    height: 300px;
     background: linear-gradient(180deg, #fffdf9 0%, #f4efe8 100%);
     border: 1px solid var(--line);
     border-radius: 18px;
@@ -549,4 +548,7 @@ a {
     margin: 10px 10px 0 10px;
     border-bottom: 1px solid;
 
+}
+.Hidden {
+    display: none;
 }
