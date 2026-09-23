@@ -49,38 +49,12 @@ final class Coin
         'issuer' => ['select' => ['ct.issuer AS issuer'], 'aliases' => ['issuer'], 'type' => 'string'],
     ];
     private array $property = [];
-    /**
-     * @todo Gestione dello stato tramite $found: L'aggiunta di public bool $found = false;
-     *  evita il lancio di eccezioni per monete inesistenti, ma genera un "oggetto zombie". 
-     * Se la query fallisce, l'applicazione si ritrova in mano un'istanza di Coin completamente vuota. 
-     * Questo costringe ogni porzione del tuo codice che crea una moneta a ricordarsi di controllare 
-     * preventivamente l'istruzione if ($coin->found) prima di richiamare i dati, 
-     * aumentando il rischio di bug invisibili. Rimuovere il DB dal costruttore e affidare la 
-     * creazione a una classe esterna che restituisca ?Coin (l'oggetto o null) è strutturalmente 
-     * più sicuro.
-     * 
-     * qualcosa tipo db->getCoin($id) ?
-     * @var bool
-     */
-    public bool $found = false;
+    
+    
 
-    public function __construct(DB $db, int $id)
+    public function __construct(array $data)
     {
-        $select = [];
-        foreach (self::ARRAY_FIELDS as $field) {
-            $select = array_merge($select, $field['select']);
-        }
-        $data = $db->fetch(
-            'SELECT ' . implode(', ', $select) . '
-            FROM coin AS c 
-            INNER JOIN coin_type AS ct ON ct.id = c.typeID 
-            INNER JOIN currency ON currency.id = ct.value_id 
-            INNER JOIN type AS object_type ON object_type.id = ct.type_id 
-            WHERE c.id = :id',
-            ['id' => $id]
-        );
         if ($data !== null) {
-            $this->found = true;
             foreach (self::ARRAY_FIELDS as $property => $field) {
                 $this->property[$property] = $this->hydrateField($field['type'], $data, $field['aliases']);
             }
@@ -148,6 +122,7 @@ final class Coin
     }
     public function __set(string $key, mixed $value): void
     {
+        // c'è modo di discriminare se il set è publico o privato?
         $type = self::ARRAY_FIELDS[$key]['type'];
         if (array_key_exists($key, self::ARRAY_FIELDS)) {
             if ((($type === 'images') || ($type === 'descriptions')) && !is_array($value)) {

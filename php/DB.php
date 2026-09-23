@@ -147,7 +147,13 @@ final class DB
 
         return $environmentValue === false ? $default : $environmentValue;
     }
-    function getCoin($id): Coin
+    /**
+     * cerca una mona con id specificato
+     * @param int $id
+     * @throws InvalidArgumentException
+     * @return Coin
+     */
+    function getCoin(int $id): Coin
     {
         if (is_numeric($id)) {
 
