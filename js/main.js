@@ -3,8 +3,9 @@ const isMockup = true;
  * @type {object} templates
  * @property {string} coin
  */
+const cardParam=['id','name','issuer','grade','value','image'];
 let templates;
-// [id,nome,anno,valore,grado,image]
+// [id,nome,emittente,valore,grado,defaultImg]
 let coins=[];
 const grade = ['g', 'vg', 'f', 'vf', 'xf', 'au', 'unc'];
 let coinsData=[];
@@ -115,7 +116,7 @@ function renderCoinCards() {
         let htmltemp=''
         for (let coin of coins) {
             let template = templates.coin;
-            for(let key of ['id','name','issuer','grade','value','image']){
+            for(let key of cardParam){
                 let value='';
                 switch (key) {
                     case 'grade':value=grade[coin[key]].toUpperCase();break;

@@ -35,11 +35,7 @@ final class Coin
         'min_year' => ['select' => ['ct.min_year AS min_year'], 'aliases' => ['min_year'], 'type' => 'int'],
         'max_year' => ['select' => ['ct.max_year AS max_year'], 'aliases' => ['max_year'], 'type' => 'int'],
         'type' => ['select' => ['object_type.name AS type'], 'aliases' => ['type'], 'type' => 'string'],
-        'img' => [
-            'select' => ['ct.img_obverse AS img_obverse', 'ct.img_reverse AS img_reverse'],
-            'aliases' => ['img_obverse', 'img_reverse'],
-            'type' => 'images',
-        ],
+        'defaultImg' => ['select'=>['ct.defaultImg'],['defaultImg'],'type'=>'image'],
         'desc' => [
             'select' => ['ct.desc_obverse AS desc_obverse', 'ct.desc_reverse AS desc_reverse'],
             'aliases' => ['desc_obverse', 'desc_reverse'],
@@ -89,16 +85,13 @@ final class Coin
      */
     private function hydrateField(string $type, array $data, array $aliases): mixed
     {
-        if ((($type === 'images') || ($type === 'descriptions')) && !is_array($data)) {
+        if (( ($type === 'descriptions')) && !is_array($data)) {
             throw new InvalidArgumentException(sprintf('Invalid data type for %s field. Expected array', $type));
         }
         return match ($type) {
             'int' => (int) $data[$aliases[0]],
             'grade' => $this->hydrateGrade((string) $data[$aliases[0]]),
-            'images' => [
-                'obverse' => (string) $data[$aliases[0]],
-                'reverse' => (string) $data[$aliases[1]],
-            ],
+            'image' => (($data[$aliases[0]]=== 'reverse')|| ($data[$aliases[0]] === 'obverse')) ? $data[$aliases[0]] :'',
             'descriptions' => [
                 'obverse' => (string) $data[$aliases[0]],
                 'reverse' => (string) $data[$aliases[1]],
@@ -131,16 +124,15 @@ final class Coin
             if (self::ARRAY_FIELDS[$key]['readonly'] === true) {
                 throw new InvalidArgumentException(sprintf('Cannot set readonly property %s', $key));
             }
-            if ((($type === 'images') || ($type === 'descriptions')) && !is_array($value)) {
+            if ((($type === 'descriptions')) && !is_array($value)) {
                 throw new InvalidArgumentException(sprintf('Invalid data type for %s field. Expected array', $type));
             }
             $this->property[$key] = match ($type) {
                 'int' => (int) $value,
                 'grade' => $this->hydrateGrade($value),
-                'images' => [
-                    'obverse' => (string) $value[0],
-                    'reverse' => (string) $value[1],
-                ],
+                'image' => 
+                     (($value === 'reverse') || ($value === 'obverse')) ? $value : ''
+                ,
                 'descriptions' => [
                     'obverse' => (string) $value[0],
                     'reverse' => (string) $value[1],
@@ -151,7 +143,7 @@ final class Coin
     }
     public function __isset(string $key): bool
     {
-        return array_key_exists($key, self::ARRAY_FIELDS)&& array_key_exists($key,$this->property);
+        return array_key_exists($key,$this->property);
     }
     public function setGrade(string $grade): void
     {
