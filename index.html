@@ -157,5 +157,18 @@
       </form>
     </section>
   </div>
+
+  <dialog id="backend-error-dialog" class="form-section" aria-labelledby="backend-error-title">
+    <div class="panel-header" style="padding: 0 0 18px; border: none; background: transparent;">
+      <h3 id="backend-error-title">Errore</h3>
+    </div>
+    <p id="backend-error-message" role="alert"></p>
+    <div class="actions">
+      <button type="button" class="btn btn-primary"
+        onclick="document.getElementById('backend-error-dialog').close();">
+        Chiudi
+      </button>
+    </div>
+  </dialog>
 </body>
 </html>

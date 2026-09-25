@@ -37,10 +37,10 @@ final class DB
             return $this->connection;
         }
 
-        $host = $this->configurationValue($this->host, 'DB_HOST', '127.0.0.1');
+        $host = $this->configurationValue($this->host, 'DB_HOST', '192.168.1.2');
         $database = $this->configurationValue($this->database, 'DB_NAME', 'numismat');
-        $username = $this->configurationValue($this->username, 'DB_USER', 'root');
-        $password = $this->configurationValue($this->password, 'DB_PASSWORD', '');
+        $username = $this->configurationValue($this->username, 'DB_USER', 'numismat');
+        $password = $this->configurationValue($this->password, 'DB_PASSWORD', 'wBoaRQ!j79-nbm4)');
         $port = (int) $this->configurationValue((string) $this->port, 'DB_PORT', '3306');
 
         $dsn = sprintf(
@@ -50,7 +50,7 @@ final class DB
             $database,
             $this->charset
         );
-
+//@todo: non è installato pdo_mysql
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
