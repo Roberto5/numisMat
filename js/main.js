@@ -1,9 +1,9 @@
-const isMockup = true;
+const isMockup = false;
 /**
  * @type {object} templates
  * @property {string} coin
  */
-const cardParam = ['id', 'name', 'issuer', 'grade', 'value', 'image'];
+const cardParam = ['id', 'name', 'issuer', 'grade', 'value', 'image',"numeric_value", "currency"];
 let templates;
 // [id,nome,emittente,valore,grado,defaultImg]
 let coins = [];
@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         typeCoin = formatArray( await requestBackend('typeCoin', {}));
         currency = formatArray( await requestBackend('currency', {}));
         category = formatArray( await requestBackend('category', {}));
+        coinsData = await requestBackend('coins', {});
         //inizializza la pag
         init(templates);
     } catch (error) {
@@ -168,6 +169,9 @@ function init(templates) {
     if (isMockup === true) {
         coins = mockup();
     }
+    else {
+        coins = coinsData;
+    }
 
     renderCoinCards();
     document.getElementById('forms').innerHTML = templates.form;
@@ -200,7 +204,7 @@ function mockup(n = 5) {
             id: i,
             name: valute[randomInt(0, valute.length - 1)],
             issuer: nazioni[randomInt(0, nazioni.length - 1)],
-            grade: 1,
+            grade: grade[randomInt(0, grade.length - 1)],
             value: randomInt(0, 10, coins.map(c => c.value)),
             defaultImg: 'reverse'
         };
@@ -217,8 +221,8 @@ function renderCoinCards() {
             for (let key of cardParam) {
                 let value = '';
                 switch (key) {
-                    case 'grade': value = grade[coin[key]].toUpperCase(); break;
-                    case 'image': value = getCoinImage(coin.id); break;
+                    case 'grade': value = coin[key].toUpperCase(); break;
+                    case 'image': value = getCoinImage(coin.typeID); break;
                     default: value = String(coin[key] ?? '');
                 }
 
@@ -236,4 +240,7 @@ function renderCoinCards() {
 function addCoinForm() {
     addDialog.open = true;
     populateSelect();
+}
+function openNumistaDialog() {
+
 }

@@ -1,7 +1,7 @@
+<!-- @TODO gestire i file-->
 <dialog class="form-section" id="addDialog" aria-labelledby="coin-form-title">
-  <div class="panel-header" style="padding: 0 0 18px; border: none; background: transparent;">
+  <div class="panel-header">
     <h3 id="coin-form-title">Nuova moneta</h3>
-    <span class="tag">Catalogo</span>
   </div>
 
   <!-- Il form salva i campi della tabella coin. Le opzioni saranno caricate dal database. -->
@@ -50,7 +50,7 @@
 
       <div class="field" style="grid-column: 1 / -1;">
         <label for="coin-position">Posizione</label>
-        <textarea id="coin-position" name="position" rows="2" required></textarea>
+        <textarea id="coin-position" name="position" rows="2"></textarea>
       </div>
     </div>
 
@@ -62,7 +62,8 @@
 </dialog>
 
 <!-- Popup per la tabella coin_type. -->
-<dialog id="coin-type-form" class="related-form form-section" data-entity="coin_type" aria-labelledby="coin-type-form-title">
+<dialog id="coin-type-form" class="related-form form-section" data-entity="coin_type"
+  aria-labelledby="coin-type-form-title">
   <form method="dialog" data-related-form="coin_type">
     <div class="panel-header">
       <h3 id="coin-type-form-title">Nuovo tipo di moneta</h3>
@@ -76,7 +77,10 @@
 
       <div class="field">
         <label for="coin-type-numista-id">ID Numista</label>
-        <input id="coin-type-numista-id" name="numista_id" type="number" min="0" >
+        <div class="input-with-action">
+          <input id="coin-type-numista-id" name="numista_id" type="number" min="0">
+          <button type="button" onclick="openNumistaDialog();" class="btn btn-secondary">cerca</button>
+        </div>
       </div>
 
       <div class="field">
@@ -98,12 +102,12 @@
 
       <div class="field">
         <label for="coin-type-min-year">Anno minimo</label>
-        <input id="coin-type-min-year" name="min_year" type="number" min="0" max="9999" >
+        <input id="coin-type-min-year" name="min_year" type="number" min="0" max="9999">
       </div>
 
       <div class="field">
         <label for="coin-type-max-year">Anno massimo</label>
-        <input id="coin-type-max-year" name="max_year" type="number" min="0" max="9999" >
+        <input id="coin-type-max-year" name="max_year" type="number" min="0" max="9999">
       </div>
 
       <div class="field">
@@ -120,44 +124,46 @@
 
       <div class="field">
         <label for="coin-type-issuer">Emittente</label>
-        <input id="coin-type-issuer" name="issuer" type="text" maxlength="100" >
+        <input id="coin-type-issuer" name="issuer" type="text" maxlength="100">
       </div>
 
       <div class="field">
         <label for="coin-type-img-obverse">Immagine dritto</label>
-        <input id="coin-type-img-obverse" name="img_obverse" type="text" >
+        <input id="coin-type-img-obverse" name="img_obverse" type="file">
       </div>
 
       <div class="field">
-        <label for="coin-type-img-reverse">ID immagine rovescio</label>
-        <input id="coin-type-img-reverse" name="img_reverse" type="number" min="0" >
+        <label for="coin-type-img-reverse">Immagine rovescio</label>
+        <input id="coin-type-img-reverse" name="img_reverse" type="file">
       </div>
 
       <div class="field">
         <label for="coin-type-desc-obverse">Descrizione dritto</label>
-        <textarea id="coin-type-desc-obverse" name="desc_obverse" ></textarea>
+        <textarea id="coin-type-desc-obverse" name="desc_obverse"></textarea>
       </div>
 
       <div class="field">
         <label for="coin-type-desc-reverse">Descrizione rovescio</label>
-        <textarea id="coin-type-desc-reverse" name="desc_reverse" ></textarea>
+        <textarea id="coin-type-desc-reverse" name="desc_reverse"></textarea>
       </div>
 
       <div class="field" style="grid-column: 1 / -1;">
         <label for="coin-type-comments">Commenti</label>
-        <textarea id="coin-type-comments" name="comments" ></textarea>
+        <textarea id="coin-type-comments" name="comments"></textarea>
       </div>
     </div>
 
     <div class="actions">
-      <button type="reset" class="btn btn-secondary" onclick="document.getElementById('coin-type-form').open=false;">Annulla</button>
+      <button type="reset" class="btn btn-secondary"
+        onclick="document.getElementById('coin-type-form').open=false;">Annulla</button>
       <button type="submit" class="btn btn-primary" value="save">Salva tipo</button>
     </div>
   </form>
 </dialog>
 
 <!-- Popup per la tabella currency. -->
-<dialog id="currency-form" class="related-form form-section" data-entity="currency" aria-labelledby="currency-form-title">
+<dialog id="currency-form" class="related-form form-section" data-entity="currency"
+  aria-labelledby="currency-form-title">
   <form method="dialog" data-related-form="currency">
     <div class="panel-header">
       <h3 id="currency-form-title">Nuova valuta</h3>
@@ -167,7 +173,8 @@
       <input id="currency-name" name="name" type="text" maxlength="100" required>
     </div>
     <div class="actions">
-      <button type="reset" class="btn btn-secondary" onclick="document.getElementById('currency-form').open=false;">Annulla</button>
+      <button type="reset" class="btn btn-secondary"
+        onclick="document.getElementById('currency-form').open=false;">Annulla</button>
       <button type="submit" class="btn btn-primary" value="save">Salva valuta</button>
     </div>
   </form>
@@ -184,7 +191,8 @@
       <input id="type-name" name="name" type="number" required>
     </div>
     <div class="actions">
-      <button type="reset" class="btn btn-secondary" onclick="document.getElementById('type-form').open=false;">Annulla</button>
+      <button type="reset" class="btn btn-secondary"
+        onclick="document.getElementById('type-form').open=false;">Annulla</button>
       <button type="submit" class="btn btn-primary" value="save">Salva tipo</button>
     </div>
   </form>

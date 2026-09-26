@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+use NumisMat\CoinCard;
 use NumisMat\DB;
 
 require_once __DIR__ . '/DB.php';
+require_once __DIR__ .'/coinCard.php';
 
 // ********* debug *********
 $debug=array_key_exists('debug',$_GET)?true:false;
@@ -20,16 +22,10 @@ if ($debug) {$_POST=$_POST+$_GET;}
  * }>} $commands
  */
 $commands = [
-    //inutile?
-    /*'coin' => [
-        'function' => 'getCoin',
-        'parameters' => [
-            'id' => [
-                'required' => true,
-                'type' => 'positive_int',
-            ]
-        ]
-    ],*/
+    'coins' => [
+        'function' => 'getCoins',
+        'parameters' => []
+    ],
     'typeCoin' => [
         'function'=> 'getTypeCoin',
         'parameters'=> [],
@@ -132,6 +128,11 @@ function getCurrency($parameters=[]) {
 function getCategory($parameters=[]) {
     $db = new DB();
     $data=$db->fetchAll('SELECT * FROM `type`');
+    respond(['data'=> $data]);
+}
+function getCoins($parameters=[]) {
+    $db = new DB();
+    $data=$db->fetchAll(CoinCard::getQuery());
     respond(['data'=> $data]);
 }
 /*

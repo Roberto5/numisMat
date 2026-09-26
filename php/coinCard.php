@@ -9,9 +9,12 @@ final class CoinCard {
     private const ARRAY_FIELDS = [
         'id' => ['select' => ['c.id AS id'], 'aliases' => ['id'], 'type' => 'int', 'readonly' => true],
         'name' => ['select' => ['ct.name AS name'], 'aliases' => ['name'], 'type' => 'string'],
+        'currency'=> ['select'=> ['cu.name as currency'],'aliases' => ['currency'], 'type' => 'string'],
+        'numeric_vaule'=> ['select'=> ['ct.numeric_value as numeric_value'],'aliases'=>['numeric_value'],'type'=>'int'],
         'issuer' => ['select' => ['ct.issuer AS issuer'], 'aliases' => ['issuer'], 'type' => 'string'],
         'value' => ['select' => ['c.value AS value'], 'aliases' => ['value'], 'type' => 'int'],
         'grade' => ['select' => ['c.grade AS grade'], 'aliases' => ['grade'], 'type' => 'grade'],
+        'typeID'=>['select' => ['c.typeID AS typeID'],'aliases'=> ['typeID'],'type'=> 'int'],
         'defaultImg' => ['select'=>['ct.defaultImg'],['defaultImg'],'type'=>'image'],
     ];
     private array $property = [];
@@ -59,7 +62,8 @@ final class CoinCard {
         }
         return 'SELECT ' . implode(', ', $select) . '
             FROM coin AS c 
-            INNER JOIN coin_type AS ct ON ct.id = c.typeID';
+            INNER JOIN coin_type AS ct ON ct.id = c.typeID
+            INNER JOIN currency AS cu ON cu.id = ct.value_id';
     }
     public function setGrade(string $grade): void
     {

@@ -50,7 +50,6 @@ final class DB
             $database,
             $this->charset
         );
-//@todo: non è installato pdo_mysql
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
