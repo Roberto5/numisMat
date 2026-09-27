@@ -79,7 +79,7 @@ function populateSelect() {
         let v = typeCoin[i];
         let opt = document.createElement('option'); 
         opt.value = v.id;  
-        opt.innerHTML = v.name;  
+        opt.textContent = v.name;  
         selectTypeEl.appendChild(opt);
 
     }
@@ -88,7 +88,7 @@ function populateSelect() {
         let v = currency[i];
         let opt = document.createElement('option'); 
         opt.value = v.id;  
-        opt.innerHTML = v.name;  
+        opt.textContent = v.name;  
         selectCurrencyEl.appendChild(opt);
 
     }
@@ -97,7 +97,7 @@ function populateSelect() {
         let v = category[i];
         let opt = document.createElement('option'); 
         opt.value = v.id;  
-        opt.innerHTML = v.name;  
+        opt.textContent = v.name;  
         selectCategoryEl.appendChild(opt);
 
     }

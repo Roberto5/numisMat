@@ -4,21 +4,26 @@ declare(strict_types=1);
 
 use NumisMat\CoinCard;
 use NumisMat\DB;
+use NumisMat\Coin;
 
 require_once __DIR__ . '/DB.php';
-require_once __DIR__ .'/coinCard.php';
+require_once __DIR__ . '/coinCard.php';
+require_once __DIR__ . '/Coin.php';
 
 // ********* debug *********
-$debug=array_key_exists('debug',$_GET)?true:false;
-if ($debug) {$_POST=$_POST+$_GET;}
+/*/$debug = array_key_exists('debug', $_GET) ? true : false;
+if ($debug) {
+    $_POST = $_POST + $_GET;
+}
+    //*/
 /**
  * Backend API contract.
  *
- * Each command explicitly declares the accepted HTTP method and parameters.
+ * Each command explicitly declares the method and parameters.
  * Parameters are read from the request source declared below.
  *
- * @var array<string, array{method: string, parameters: array<string, array{
- *     source: string, required: bool, type: string
+ * @var array<string, array{function: string, parameters: array<string, array{
+ *  required: bool, type: string
  * }>} $commands
  */
 $commands = [
@@ -27,16 +32,34 @@ $commands = [
         'parameters' => []
     ],
     'typeCoin' => [
-        'function'=> 'getTypeCoin',
-        'parameters'=> [],
+        'function' => 'getTypeCoin',
+        'parameters' => [],
     ],
     'currency' => [
-        'function'=> 'getCurrency',
-        'parameters'=> []
+        'function' => 'getCurrency',
+        'parameters' => []
     ],
     'category' => [
-        'function'=> 'getCategory',
-        'parameters'=> []
+        'function' => 'getCategory',
+        'parameters' => []
+    ],
+    'insert' => [
+        'function' => 'insert',
+        'parameters' => [
+            //'id' => ['type' => 'positive_int']
+            'typeID' => ['type' => 'positive_int', 'required' => true],
+            'number' => ['type' => 'positive_int', 'required' => true],
+            'year' => ['type' => 'int'],
+            'grade' => ['type' => 'grade'],
+            'value' => ['type' => 'float'],
+            'position' => ['type' => 'string'],
+        ],
+    ],
+    'update' => [
+        'function' => 'update',
+        'parameters' => [
+            'id' => ['type' => 'positive_int']
+        ],
     ],
 ];
 /**
@@ -91,7 +114,7 @@ foreach ($command['parameters'] as $name => $definition) {
     $value = requestScalar($_POST, $name);
 
     if ($value === null || $value === '') {
-        if ($definition['required']) {
+        if (array_key_exists('required', $definition) && $definition['required']) {
             respond(['error' => sprintf('Il parametro "%s" è obbligatorio.', $name)], 400);
         }
         continue;
@@ -109,86 +132,88 @@ foreach ($command['parameters'] as $name => $definition) {
         $parameters[$name] = $validatedValue;
         continue;
     }
+    if ($definition['type'] === 'int') {
+        $validatedValue = filter_var($value, FILTER_VALIDATE_INT);
+        if ($validatedValue === false) {
+            respond([
+                'error' => sprintf('Il parametro "%s" deve essere un intero.', $name),
+            ], 400);
+        }
+        $parameters[$name] = $validatedValue;
+        continue;
+    }
+    if ($definition['type'] === 'grade') {
+        $VALID_GRADES = ['g', 'vg', 'f', 'vf', 'xf', 'au', 'unc'];
+        if (!in_array($value, $VALID_GRADES)) {
+            respond([
+                'error' => sprintf('Il parametro "%s" deve essere un grado valido.', $name),
+            ], 400);
+        }
+        $parameters[$name] = $value;
+        continue;
+    }
+    if ($definition['type'] === 'float') {
+        $validatedValue = filter_var($value, FILTER_VALIDATE_FLOAT);
+        if ($validatedValue === false) {
+            respond([
+                'error' => sprintf('Il parametro "%s" deve essere un numero float.', $name),
+            ], 400);
+        }
+        $parameters[$name] = $validatedValue;
+        continue;
+    }
+    if ($definition['type'] === 'string') {
+        $validatedValue = htmlspecialchars($value, ENT_QUOTES);
+        if ($validatedValue === false) {
+            respond([
+                'error' => sprintf('Il parametro "%s" deve essere una stringa.', $name),
+            ], 400);
+        }
+        $parameters[$name] = $validatedValue;
+        continue;
+    }
+
 
     respond(['error' => sprintf('Tipo di parametro "%s" non configurato.', $name)], 500);
 }
 // Call the command function with the validated parameters.
-$command['function']($parameters);
-function getTypeCoin($parameters=[]) {
-    $db = new DB();
-    $data=$db->fetchAll("SELECT * FROM `coin_type`");
-    respond(['data'=> $data]);
-}
-function getCurrency($parameters=[]) {
-    $db = new DB();
-    $data=$db->fetchAll("SELECT * FROM `currency`");
-    respond(['data'=> $data]);
-}
-
-function getCategory($parameters=[]) {
-    $db = new DB();
-    $data=$db->fetchAll('SELECT * FROM `type`');
-    respond(['data'=> $data]);
-}
-function getCoins($parameters=[]) {
-    $db = new DB();
-    $data=$db->fetchAll(CoinCard::getQuery());
-    respond(['data'=> $data]);
-}
-/*
-
-
-
 try {
-    $db = new DB();
-
-    if (isset($parameters['id'])) {
-        $coin = $db->fetch(
-            'SELECT
-                c.id,
-                ct.name,
-                ct.issuer,
-                c.value,
-                c.grade,
-                c.number,
-                c.year,
-                c.position,
-                ct.numista_id,
-                ct.numeric_value,
-                ct.min_year,
-                ct.max_year,
-                ct.desc_obverse,
-                ct.desc_reverse,
-                ct.comments
-             FROM coin AS c
-             INNER JOIN coin_type AS ct ON ct.id = c.typeID
-             WHERE c.id = :id',
-            ['id' => $parameters['id']]
-        );
-
-        if ($coin === null) {
-            respond(['error' => 'Moneta non trovata.'], 404);
-        }
-
-        respond(['data' => $coin]);
-    }
-
-    $coins = $db->fetchAll(
-        'SELECT
-            c.id,
-            ct.name,
-            ct.issuer,
-            c.value,
-            c.grade,
-            ct.defaultImg
-         FROM coin AS c
-         INNER JOIN coin_type AS ct ON ct.id = c.typeID
-         ORDER BY c.id'
-    );
-
-    respond(['data' => $coins]);
-} catch (Throwable $exception) {
-    error_log($exception->getMessage());
-    respond(['error' => 'Errore interno del server.'.$exception->getMessage().' at line '.$exception->getLine(). ' in file '.$exception->getFile()], 500);
+    $command['function']($parameters);
+} catch (\Exception $e) {
+    respond(['error' => $e->getMessage().' on file '.$e->getFile().' line '.$e->getLine()], 500);
 }
-*/
+function getTypeCoin($parameters = [])
+{
+    $db = new DB();
+    $data = $db->fetchAll("SELECT * FROM `coin_type`");
+    respond(['data' => $data]);
+}
+function getCurrency($parameters = [])
+{
+    $db = new DB();
+    $data = $db->fetchAll("SELECT * FROM `currency`");
+    respond(['data' => $data]);
+}
+
+function getCategory($parameters = [])
+{
+    $db = new DB();
+    $data = $db->fetchAll('SELECT * FROM `type`');
+    respond(['data' => $data]);
+}
+function getCoins($parameters = [])
+{
+    $db = new DB();
+    $data = $db->fetchAll(CoinCard::getQuery());
+    respond(['data' => $data]);
+}
+function insert($parameters = [])
+{
+    $db = new DB();
+    $data = [];
+    $coin = new Coin($data);
+}
+function update($parameters = [])
+{
+    $db = new DB();
+}
