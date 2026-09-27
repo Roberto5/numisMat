@@ -37,11 +37,11 @@ final class DB
             return $this->connection;
         }
 
-        $host = $this->configurationValue($this->host, 'DB_HOST', '192.168.1.2');
-        $database = $this->configurationValue($this->database, 'DB_NAME', 'numismat');
-        $username = $this->configurationValue($this->username, 'DB_USER', 'numismat');
-        $password = $this->configurationValue($this->password, 'DB_PASSWORD', 'wBoaRQ!j79-nbm4)');
-        $port = (int) $this->configurationValue((string) $this->port, 'DB_PORT', '3306');
+        $host = $this->configurationValue($this->host, 'DB_HOST','');
+        $database = $this->configurationValue($this->database, 'DB_NAME', '');
+        $username = $this->configurationValue($this->username, 'DB_USER', '');
+        $password = $this->configurationValue($this->password, 'DB_PASSWORD', '');
+        $port = (int) $this->configurationValue((string) $this->port, 'DB_PORT', '');
 
         $dsn = sprintf(
             'mysql:host=%s;port=%d;dbname=%s;charset=%s',

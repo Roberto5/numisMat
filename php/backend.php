@@ -180,7 +180,7 @@ foreach ($command['parameters'] as $name => $definition) {
 try {
     $command['function']($parameters);
 } catch (\Exception $e) {
-    respond(['error' => $e->getMessage().' on file '.$e->getFile().' line '.$e->getLine()], 500);
+    respond(['error' => $e->getMessage().' on file '.$e->getFile().' line '.$e->getLine().' '.print_r($e,true)], 500);
 }
 function getTypeCoin($parameters = [])
 {

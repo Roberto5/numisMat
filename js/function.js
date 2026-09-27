@@ -102,3 +102,16 @@ function populateSelect() {
 
     }
 }
+/**
+ * escape html entities
+ * @param {string} unsafe 
+ * @returns 
+ */
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}

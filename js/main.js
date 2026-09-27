@@ -223,7 +223,7 @@ function renderCoinCards() {
                 switch (key) {
                     case 'grade': value = coin[key].toUpperCase(); break;
                     case 'image': value = getCoinImage(coin.typeID); break;
-                    default: value = String(coin[key] ?? '');
+                    default: value = escapeHtml(String(coin[key] ?? ''));
                 }
 
                 template = template.replaceAll(`[${key}]`, value);
