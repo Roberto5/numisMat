@@ -3,7 +3,7 @@ const isMockup = false;
  * @type {object} templates
  * @property {string} coin
  */
-const cardParam = ['id', 'name', 'issuer', 'grade', 'value', 'image',"numeric_value", "currency"];
+const cardParam = ['id', 'name', 'year', 'issuer', 'grade', 'value', 'image', "numeric_value", "currency"];
 let templates;
 // [id,nome,emittente,valore,grado,defaultImg]
 let coins = [];
@@ -111,9 +111,9 @@ function showBackendError(message) {
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         templates = await loadTemplates();
-        typeCoin = formatArray( await requestBackend('typeCoin', {}));
-        currency = formatArray( await requestBackend('currency', {}));
-        category = formatArray( await requestBackend('category', {}));
+        typeCoin = formatArray(await requestBackend('typeCoin', {}));
+        currency = formatArray(await requestBackend('currency', {}));
+        category = formatArray(await requestBackend('category', {}));
         coinsData = await requestBackend('coins', {});
         //inizializza la pag
         init(templates);
@@ -176,6 +176,7 @@ function init(templates) {
     renderCoinCards();
     document.getElementById('forms').innerHTML = templates.form;
     formEl = document.getElementById('coin-form');
+    formEl.addEventListener('submit', addCoin);
     addDialog = document.getElementById('addDialog');
     selectTypeEl = document.getElementById('coin-type-id');
     selectCurrencyEl = document.getElementById('coin-type-value-id');
@@ -243,4 +244,18 @@ function addCoinForm() {
 }
 function openNumistaDialog() {
 
+}
+async function addCoin(event) {
+    event.preventDefault();
+    let data = new FormData(formEl);
+    data = Object.fromEntries(data.entries());
+    let coin = await requestBackend('insert', data);
+    if (!coin) return false;
+
+
+    coinsData.push(coin);
+    renderCoinCards();
+    formEl.reset();
+    addDialog.close();
+    return false;
 }

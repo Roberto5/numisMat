@@ -16,6 +16,7 @@ final class CoinCard {
         'grade' => ['select' => ['c.grade AS grade'], 'aliases' => ['grade'], 'type' => 'grade'],
         'typeID'=>['select' => ['c.typeID AS typeID'],'aliases'=> ['typeID'],'type'=> 'int'],
         'defaultImg' => ['select'=>['ct.defaultImg'],['defaultImg'],'type'=>'image'],
+        'year'=> ['select'=>['c.year AS year'],'aliases'=>['year'],'type'=>'int'],
     ];
     private array $property = [];
     public function __construct(array $data)

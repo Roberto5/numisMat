@@ -10,8 +10,8 @@ require_once __DIR__ . '/DB.php';
 require_once __DIR__ . '/coinCard.php';
 require_once __DIR__ . '/Coin.php';
 
-// ********* debug *********
-/*/$debug = array_key_exists('debug', $_GET) ? true : false;
+/// ********* debug *********
+$debug = array_key_exists('debug', $_GET) ? true : false;
 if ($debug) {
     $_POST = $_POST + $_GET;
 }
@@ -116,8 +116,7 @@ foreach ($command['parameters'] as $name => $definition) {
     if ($value === null || $value === '') {
         if (array_key_exists('required', $definition) && $definition['required']) {
             respond(['error' => sprintf('Il parametro "%s" è obbligatorio.', $name)], 400);
-        }
-        continue;
+        }   
     }
 
     if ($definition['type'] === 'positive_int') {
@@ -180,7 +179,7 @@ foreach ($command['parameters'] as $name => $definition) {
 try {
     $command['function']($parameters);
 } catch (\Exception $e) {
-    respond(['error' => $e->getMessage().' on file '.$e->getFile().' line '.$e->getLine().' '.print_r($e,true)], 500);
+    respond(['error' => $e->getMessage() . ' on file ' . $e->getFile() . ' line ' . $e->getLine()], 500);
 }
 function getTypeCoin($parameters = [])
 {
@@ -210,8 +209,17 @@ function getCoins($parameters = [])
 function insert($parameters = [])
 {
     $db = new DB();
-    $data = [];
-    $coin = new Coin($data);
+    $sql = '
+    INSERT INTO coin (typeID, number, year, grade, value, position)
+    VALUES (:typeID, :number, :year, :grade, :value, :position)
+';
+/*echo $sql;
+print_r($parameters);*/
+    $db->execute($sql, $parameters);
+    $id= $db->lastInsertId();
+    $sql = CoinCard::getQuery()." WHERE c.id='".$id."'";
+    $data=$db->fetch($sql);
+    respond(['data' => $data]);
 }
 function update($parameters = [])
 {

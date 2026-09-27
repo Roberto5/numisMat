@@ -22,7 +22,7 @@ final class Coin
      */
     private const ARRAY_FIELDS = [
         'id' => ['select' => ['c.id AS id'], 'aliases' => ['id'], 'type' => 'int', 'readonly' => true],
-        'typeId' => ['select' => ['c.typeID AS typeId'], 'aliases' => ['typeId'], 'type' => 'int'],
+        'typeID' => ['select' => ['c.typeID AS typeId'], 'aliases' => ['typeId'], 'type' => 'int'],
         'number' => ['select' => ['c.number AS number'], 'aliases' => ['number'], 'type' => 'int'],
         'year' => ['select' => ['c.year AS year'], 'aliases' => ['year'], 'type' => 'int'],
         'grade' => ['select' => ['c.grade AS grade'], 'aliases' => ['grade'], 'type' => 'grade'],
