@@ -11,7 +11,7 @@ function randomNumber(min, max, exclude) {
         if (!exclude.includes(i))
             pool.push(i);
     }
-    if (pool.length > 1) return pool[randomInt(0,pool.length - 1)];
+    if (pool.length > 1) return pool[randomInt(0, pool.length - 1)];
     else {
         if (pool.length === 1) return pool[0];
         else return null; // se non ci
@@ -39,7 +39,7 @@ function getImage(src, alt, params = {}) {
     img.alt = alt;
     img.title = alt;
     //img.setAttribute('onerror', 'this.remove();');
-    
+
     img.setAttribute('onerror', "this.setAttribute('src','img/default_coin.png');");
     //img.onerror
     for (const [key, value] of Object.entries(params)) {
@@ -54,8 +54,8 @@ function getImage(src, alt, params = {}) {
  */
 function getCoinImage(id) {
     if (parseInt(id) < 0) return null;
-    let coin =coins.find(v=>v.id==id);
-    return getImage(`CoinImg/${coin.defaultImg}-${id}.png`,coin.name,{height:'140px',with:'140px'});
+    let coin = coins.find(v => v.id == id);
+    return getImage(`CoinImg/${coin.defaultImg}-${id}.png`, coin.name, { height: '140px', with: '140px' });
 }
 /**
  * formatta un array di oggetti nel formato id=>oggetto più facile da indicizzare
@@ -63,41 +63,41 @@ function getCoinImage(id) {
  * @param {string} idTemplate = 'id'
  * @returns 
  */
-function formatArray(arraySource,idTemplate='id') {
-    let result=[];
-    for (let v of arraySource) 
-        result[v[idTemplate]]=v;
+function formatArray(arraySource, idTemplate = 'id') {
+    let result = [];
+    for (let v of arraySource)
+        result[v[idTemplate]] = v;
     return result;
 }
 /**
  * popola i select con i dati delle monete
  */
 function populateSelect() {
-   
+
     //populate typecoin
-    for(let i in typeCoin) {
+    for (let i in typeCoin) {
         let v = typeCoin[i];
-        let opt = document.createElement('option'); 
-        opt.value = v.id;  
-        opt.textContent = v.name;  
+        let opt = document.createElement('option');
+        opt.value = v.id;
+        opt.textContent = v.name;
         selectTypeEl.appendChild(opt);
 
     }
     //populate currency
-    for(let i in currency) {
+    for (let i in currency) {
         let v = currency[i];
-        let opt = document.createElement('option'); 
-        opt.value = v.id;  
-        opt.textContent = v.name;  
+        let opt = document.createElement('option');
+        opt.value = v.id;
+        opt.textContent = v.name;
         selectCurrencyEl.appendChild(opt);
 
     }
     //populate category
-    for(let i in category) {
+    for (let i in category) {
         let v = category[i];
-        let opt = document.createElement('option'); 
-        opt.value = v.id;  
-        opt.textContent = v.name;  
+        let opt = document.createElement('option');
+        opt.value = v.id;
+        opt.textContent = v.name;
         selectCategoryEl.appendChild(opt);
 
     }
@@ -108,10 +108,18 @@ function populateSelect() {
  * @returns 
  */
 function escapeHtml(unsafe) {
-  return unsafe
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+function disableUrl(input) {
+    let input2 = document.getElementById(input.id + '-url');
+    if (!input2) {
+        console.error(input.id + '-url not found'); return
+    }
+    if (input.value != '') input2.disabled = true;
+    else input2.disabled = false;
 }

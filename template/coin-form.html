@@ -15,7 +15,7 @@
           </select>
           <button type="button" class="btn btn-secondary add-related" data-open-form="coin-type-form"
             aria-controls="coin-type-form" aria-haspopup="dialog" title="Aggiungi tipo di moneta"
-            onclick="document.getElementById('coin-type-form').open=true;">+</button>
+            onclick="document.getElementById('coin-type-form-dialog').open=true;">+</button>
         </div>
       </div>
 
@@ -62,9 +62,9 @@
 </dialog>
 
 <!-- Popup per la tabella coin_type. -->
-<dialog id="coin-type-form" class="related-form form-section" data-entity="coin_type"
+<dialog id="coin-type-form-dialog" class="related-form form-section" data-entity="coin_type"
   aria-labelledby="coin-type-form-title">
-  <form method="dialog" data-related-form="coin_type">
+  <form id="coin-type-form" method="dialog" data-related-form="coin_type">
     <div class="panel-header">
       <h3 id="coin-type-form-title">Nuovo tipo di moneta</h3>
     </div>
@@ -126,15 +126,31 @@
         <label for="coin-type-issuer">Emittente</label>
         <input id="coin-type-issuer" name="issuer" type="text" maxlength="100">
       </div>
-
+      <!-- @todo aggiungere una gestione di upload da pc o da link internet -->
       <div class="field">
         <label for="coin-type-img-obverse">Immagine dritto</label>
-        <input id="coin-type-img-obverse" name="img_obverse" type="file">
+        Default:<input type="checkbox" name="default_obverse" id="default_obverse" value="1"
+          onchange="document.getElementById('default_reverse').checked = !this.checked;">
+        <input id="coin-type-img-obverse-url" name="img_obverse_url" type="url" placeholder="URL dell'immagine">
+        <div class="input-group">
+          <input id="coin-type-img-obverse" name="img_obverse" type="file" accept="image/*"
+            onchange="disableUrl(this);">
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('coin-type-img-obverse').value='';disableUrl(document.getElementById('coin-type-img-obverse'));">x</button>
+        </div>
       </div>
 
       <div class="field">
         <label for="coin-type-img-reverse">Immagine rovescio</label>
-        <input id="coin-type-img-reverse" name="img_reverse" type="file">
+        Default:<input type="checkbox" checked="true" id="default_reverse" name="default_reverse" value="1"
+          onchange="document.getElementById('default_obverse').checked = !this.checked;">
+        <input id="coin-type-img-reverse-url" name="img_reverse_url" type="url" placeholder="URL dell'immagine">
+        <div class="input-group">
+          <input id="coin-type-img-reverse" name="img_reverse" type="file" accept="image/*"
+            onchange="disableUrl(this);">
+          <button type="button" class="btn btn-secondary"
+            onclick="document.getElementById('coin-type-img-reverse').value='';disableUrl(document.getElementById('coin-type-img-reverse'));">x</button>
+        </div>
       </div>
 
       <div class="field">
@@ -155,7 +171,7 @@
 
     <div class="actions">
       <button type="reset" class="btn btn-secondary"
-        onclick="document.getElementById('coin-type-form').open=false;">Annulla</button>
+        onclick="document.getElementById('coin-type-form-dialog').open=false;">Annulla</button>
       <button type="submit" class="btn btn-primary" value="save">Salva tipo</button>
     </div>
   </form>

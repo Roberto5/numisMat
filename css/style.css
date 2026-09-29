@@ -456,6 +456,9 @@ a {
     position: absolute;
     z-index: 100;
 }
+.field input:disabled {
+    background-color: var(--panel) !important;
+}
 
 .form-grid {
     display: grid;

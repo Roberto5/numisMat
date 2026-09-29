@@ -22,6 +22,7 @@ let addDialog;
 let selectTypeEl;
 let selectCurrencyEl;
 let selectCategoryEl;
+let coinTypeForm;
 
 /**
  * Esegue una richiesta al backend e restituisce i dati della risposta.
@@ -45,21 +46,33 @@ async function requestBackend(service, parameters = {}) {
     }
 
     const query = new URLSearchParams({ service: service.trim() });
-    const body = new URLSearchParams();
+    const hasFiles = Object.values(parameters).some((value) => value instanceof File);
+    const body = hasFiles ? new FormData() : new URLSearchParams();
+
     for (const [key, value] of Object.entries(parameters)) {
         if (value === null || value === undefined) {
+            continue;
+        }
+        if (hasFiles) {
+            if (value instanceof File) {
+                body.append(key, value);
+                continue;
+            }
+            body.append(key, String(value));
             continue;
         }
         body.append(key, String(value));
     }
 
     try {
+        const headers = hasFiles ? { 'Accept': 'application/json' } : {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json',
+        };
+
         const response = await fetch(`php/backend.php?${query.toString()}`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json',
-            },
+            headers,
             body,
         });
 
@@ -181,6 +194,8 @@ function init(templates) {
     selectTypeEl = document.getElementById('coin-type-id');
     selectCurrencyEl = document.getElementById('coin-type-value-id');
     selectCategoryEl = document.getElementById('coin-type-type-id');
+    coinTypeForm = document.getElementById('coin-type-form');
+    coinTypeForm.addEventListener('submit', addCoinType);
 }
 
 /**
@@ -258,4 +273,19 @@ async function addCoin(event) {
     formEl.reset();
     addDialog.close();
     return false;
+}
+async function addCoinType(event) {
+    event.preventDefault();
+    let data = new FormData(coinTypeForm);
+    data = Object.fromEntries(data.entries());
+    let data2={}
+    for (k in data) 
+        if ((k!='default_reverse')||(k!='default_obverse')) data2[k]=data[k];
+    data2.defaultImg=data.default_reverse==1 ? 'reverse' : 'obverse';
+    let coinType = await requestBackend('insertType',data2);
+    typeCoin.push(coinType);
+    populateSelect();
+    coinTypeForm.reset();
+    coinTypeDialog.close();
+    console.log(data);
 }
