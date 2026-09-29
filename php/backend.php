@@ -146,7 +146,7 @@ foreach ($command['parameters'] as $name => $definition) {
 
     if ($definition['type'] === 'positive_int') {
         $validatedValue = filter_var($value, FILTER_VALIDATE_INT, [
-            'options' => ['min_range' => 1],
+            'options' => ['min_range' => 0],
         ]);
         if ($validatedValue === false) {
             respond([
@@ -321,6 +321,16 @@ function update($parameters = [])
 {
     $db = new DB();
 }
+/**
+ * @todo testare l'upload perche non funziona!!
+ * @param string $fieldName
+ * @param mixed $sourceUrl
+ * @param array $uploadedFile
+ * @param int $typeId
+ * @param string $side
+ * @throws RuntimeException
+ * @return string|null
+ */
 function persistImageForType(string $fieldName, ?string $sourceUrl, array $uploadedFile, int $typeId, string $side): ?string
 {
     $destinationDir = __DIR__ . '/../CoinImg';
@@ -358,27 +368,6 @@ function persistImageForType(string $fieldName, ?string $sourceUrl, array $uploa
 function insertType($parameters = [])
 {
     $db = new DB();
-    /*/ non serve a niente
-        $tableColumns = $db->fetchAll('SHOW COLUMNS FROM coin_type');
-        $knownColumns = array_map(static fn (array $column): string => (string) ($column['Field'] ?? ''), $tableColumns);
-
-        $insertFields = [
-            'name',
-            'numista_id',
-            'value_id',
-            'numeric_value',
-            'min_year',
-            'max_year',
-            'type_id',
-            'desc_obverse',
-            'desc_reverse',
-            'comments',
-            'issuer',
-        ];
-        if (in_array('defaultImg', $knownColumns, true)) {
-            $insertFields[] = 'defaultImg';
-        }
-    //*/
     $insertData = [];
     foreach ($parameters as $key => $value) {
         if (!str_starts_with($key, "img")) {

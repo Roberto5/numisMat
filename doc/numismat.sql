@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Creato il: Set 21, 2026 alle 20:26
+-- Creato il: Set 29, 2026 alle 21:59
 -- Versione del server: 8.0.46
--- Versione PHP: 8.3.33
+-- Versione PHP: 8.3.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `coin` (
   `id` int NOT NULL,
   `typeID` int NOT NULL,
-  `number` int NOT NULL,
+  `number` float NOT NULL DEFAULT '0',
   `year` int NOT NULL,
   `grade` enum('g','vg','f','vf','xf','au','unc') NOT NULL,
-  `value` int NOT NULL,
-  `position` text NOT NULL
+  `value` float NOT NULL DEFAULT '0',
+  `position` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -52,11 +52,10 @@ CREATE TABLE `coin_type` (
   `min_year` int NOT NULL,
   `max_year` int NOT NULL,
   `type_id` int NOT NULL,
-  `img_obverse` text NOT NULL,
-  `img_reverse` int NOT NULL,
-  `desc_obverse` text NOT NULL,
-  `desc_reverse` text NOT NULL,
-  `comments` text NOT NULL,
+  `defaultImg` varchar(10) NOT NULL DEFAULT 'reverse',
+  `desc_obverse` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `desc_reverse` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `comments` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `issuer` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -79,7 +78,7 @@ CREATE TABLE `currency` (
 
 CREATE TABLE `type` (
   `id` int NOT NULL,
-  `name` int NOT NULL
+  `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
