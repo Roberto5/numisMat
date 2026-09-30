@@ -90,7 +90,7 @@ async function requestBackend(service, parameters = {}) {
         if (payload.error) {
             throw new Error(payload.error);
         }
-        console.log('data', payload.data);
+        //console.log('data', payload.data);
         return payload.data;
     } catch (error) {
         showBackendError(error instanceof Error ? error.message : 'Errore imprevisto del backend.');
@@ -238,7 +238,7 @@ function renderCoinCards() {
                 let value = '';
                 switch (key) {
                     case 'grade': value = coin[key].toUpperCase(); break;
-                    case 'image': value = getCoinImage(coin.typeID); break;
+                    case 'image': value = getCoinImage(coin.id); break;
                     default: value = escapeHtml(String(coin[key] ?? ''));
                 }
 
@@ -283,9 +283,10 @@ async function addCoinType(event) {
         if ((k!='default_reverse')||(k!='default_obverse')) data2[k]=data[k];
     data2.defaultImg=data.default_reverse==1 ? 'reverse' : 'obverse';
     let coinType = await requestBackend('insertType',data2);
-    typeCoin.push(coinType);
+
+    typeCoin[coinType.id]=coinType;
     populateSelect();
     coinTypeForm.reset();
     coinTypeDialog.close();
-    console.log(data);
+    //console.log(data);
 }

@@ -55,7 +55,7 @@ function getImage(src, alt, params = {}) {
 function getCoinImage(id) {
     if (parseInt(id) < 0) return null;
     let coin = coins.find(v => v.id == id);
-    return getImage(`CoinImg/${coin.defaultImg}-${id}.png`, coin.name, { height: '140px', with: '140px' });
+    return getImage(`CoinImg/${coin.defaultImg}-${coin.typeID}.png`, coin.name, { height: '140px', with: '140px' });
 }
 /**
  * formatta un array di oggetti nel formato id=>oggetto più facile da indicizzare

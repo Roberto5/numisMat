@@ -401,6 +401,7 @@ function insertType($parameters = [])
         $savedFile = persistImageForType($fieldMap['file'], $sourceUrl, is_array($uploadedFile) ? $uploadedFile : [], $id, $side);
 
         if ($savedFile === null) {
+            //echo 'non son riuscito a salvare';
             continue;
         }
     }
