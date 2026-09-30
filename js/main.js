@@ -147,6 +147,7 @@ async function loadTemplates() {
         coin: 'template/card.html',
         //for example:
         form: 'template/coin-form.html',
+        numista: 'template/numista.html',
         // header: 'template/header.html',
     };
 
@@ -188,7 +189,11 @@ function init(templates) {
     }
 
     renderCoinCards();
-    document.getElementById('forms').innerHTML = templates.form;
+    document.getElementById('forms').innerHTML = templates.form + templates.numista;
+    document.getElementById('numista-search-form').addEventListener('submit', (event) => {
+        event.preventDefault();//@todo implementare ricerca da qui
+        document.getElementById('numista-search-status').textContent = 'La ricerca Numista non è ancora collegata.';
+    });
     formEl = document.getElementById('coin-form');
     formEl.addEventListener('submit', addCoin);
     addDialog = document.getElementById('addDialog');
@@ -260,7 +265,12 @@ function addCoinForm() {
     populateSelect();
 }
 function openNumistaDialog() {
-
+    const dialog = document.getElementById('numistaDialog');
+    if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+    } else {
+        dialog.open = true;
+    }
 }
 async function addCoin(event) {
     event.preventDefault();

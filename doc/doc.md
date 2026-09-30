@@ -1,4 +1,4 @@
-# api numista
+
 
 ## accesso al database
 
@@ -49,6 +49,7 @@ use NumisMat\Coin;
 $coin = new Coin($db, 1);
 ```
 
+# api numista
 
 ## ricerca per id
 curl -X GET "https://api.numista.com/v3/types/[id]" \

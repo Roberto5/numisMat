@@ -1,0 +1,22 @@
+<dialog id="numistaDialog" class="numista-dialog" aria-labelledby="numista-dialog-title">
+	<div class="panel-header numista-dialog-header">
+		<h3 id="numista-dialog-title">Cerca una moneta su Numista</h3>
+		<button type="button" class="btn btn-secondary" aria-label="Chiudi ricerca Numista"
+			onclick="document.getElementById('numistaDialog').close();">Chiudi</button>
+	</div>
+
+	<form id="numista-search-form" role="search">
+		<label for="numista-search-query">Stringa di ricerca</label>
+		<div class="numista-search-controls">
+			<input id="numista-search-query" name="query" type="search" placeholder="Nome, paese o anno della moneta"
+				autocomplete="off" required>
+			<button type="submit" class="btn btn-primary">Cerca</button>
+		</div>
+	</form>
+
+	<section class="numista-results" aria-labelledby="numista-results-title">
+		<h4 id="numista-results-title">Risultati</h4>
+		<p id="numista-search-status" aria-live="polite">I risultati della ricerca appariranno qui.</p>
+		<ul id="numista-results-list" aria-live="polite"></ul>
+	</section>
+</dialog>
