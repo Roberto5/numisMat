@@ -220,9 +220,7 @@ foreach ($command['parameters'] as $name => $definition) {
 
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $mime = $finfo !== false ? finfo_file($finfo, $tmpName) : false;
-        if ($finfo !== false) {
-            finfo_close($finfo);
-        }
+        
 
         if ($mime === false || strpos((string) $mime, 'image/') !== 0) {
             respond([
@@ -405,7 +403,7 @@ function insertType($parameters = [])
             continue;
         }
     }
-
+    //@todo scontornare l'immagine
     $coinType = $db->fetch('SELECT * FROM coin_type WHERE id = :id', ['id' => $id]);
     respond(['data' => $coinType ?? ['id' => $id]]);
 }

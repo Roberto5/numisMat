@@ -23,6 +23,7 @@ let selectTypeEl;
 let selectCurrencyEl;
 let selectCategoryEl;
 let coinTypeForm;
+let coinTypeDialog;
 
 /**
  * Esegue una richiesta al backend e restituisce i dati della risposta.
@@ -196,6 +197,7 @@ function init(templates) {
     selectCategoryEl = document.getElementById('coin-type-type-id');
     coinTypeForm = document.getElementById('coin-type-form');
     coinTypeForm.addEventListener('submit', addCoinType);
+    coinTypeDialog=document.getElementById('coin-type-form-dialog');
 }
 
 /**
